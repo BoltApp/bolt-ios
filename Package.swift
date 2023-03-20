@@ -15,8 +15,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "Bolt",
-      url: "https://bolt-mobile-interview.s3.us-west-1.amazonaws.com/Bolt.xcframework.zip",
-      checksum: "bde03998f4ff2afedc31bf036fd9178a113c6dedd759a2b024c0f7f7e1c859e4"
+      url: "https://bolt-mobile-sdk.s3.us-west-2.amazonaws.com/Bolt.xcframework.zip",
+      checksum: "834ee84096ad69aff3a7f7af8f414623e913a216985f74fe705514c8be8174ce"
     )
   ]
 )
