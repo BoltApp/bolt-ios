@@ -12,7 +12,7 @@ struct ContentView: View {
   private let tokenizer = Bolt.CreditCardTokenizer()
   
   init() {
-    Bolt.ClientProperties.shared.environment = .staging
+    Bolt.ClientProperties.shared.environment = .sandbox
   }
   
   var body: some View {
@@ -22,7 +22,6 @@ struct ContentView: View {
   }
 
   private func tokenize() {
-    Bolt.ClientProperties.shared.environment = .staging
     tokenizer.generateToken(cardNumber: "4111111111111111", cvv: "123") { result in
       switch result {
       case .success(let card):

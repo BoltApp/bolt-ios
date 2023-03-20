@@ -11,7 +11,7 @@
 		ECEA8E9029C77A49004BFEDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA8E8F29C77A49004BFEDD /* ContentView.swift */; };
 		ECEA8E9229C77A4B004BFEDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECEA8E9129C77A4B004BFEDD /* Assets.xcassets */; };
 		ECEA8E9529C77A4B004BFEDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECEA8E9429C77A4B004BFEDD /* Preview Assets.xcassets */; };
-		ECEA8E9D29C77C38004BFEDD /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = ECEA8E9C29C77C38004BFEDD /* Bolt */; };
+		ECEA8EC229C91FA8004BFEDD /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = ECEA8EC129C91FA8004BFEDD /* Bolt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECEA8E9D29C77C38004BFEDD /* Bolt in Frameworks */,
+				ECEA8EC229C91FA8004BFEDD /* Bolt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +39,7 @@
 			children = (
 				ECEA8E8C29C77A49004BFEDD /* Example */,
 				ECEA8E8B29C77A49004BFEDD /* Products */,
+				ECEA8EC029C91FA8004BFEDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +70,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		ECEA8EC029C91FA8004BFEDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,7 +94,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				ECEA8E9C29C77C38004BFEDD /* Bolt */,
+				ECEA8EC129C91FA8004BFEDD /* Bolt */,
 			);
 			productName = Example;
 			productReference = ECEA8E8A29C77A49004BFEDD /* Example.app */;
@@ -117,7 +125,7 @@
 			);
 			mainGroup = ECEA8E8129C77A49004BFEDD;
 			packageReferences = (
-				ECEA8E9B29C77C38004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */,
+				ECEA8EBF29C91F7C004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */,
 			);
 			productRefGroup = ECEA8E8B29C77A49004BFEDD /* Products */;
 			projectDirPath = "";
@@ -351,20 +359,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ECEA8E9B29C77C38004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */ = {
+		ECEA8EBF29C91F7C004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BoltApp/bolt-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
+				minimumVersion = 0.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ECEA8E9C29C77C38004BFEDD /* Bolt */ = {
+		ECEA8EC129C91FA8004BFEDD /* Bolt */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ECEA8E9B29C77C38004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */;
+			package = ECEA8EBF29C91F7C004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */;
 			productName = Bolt;
 		};
 /* End XCSwiftPackageProductDependency section */
