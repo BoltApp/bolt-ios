@@ -72,6 +72,71 @@ CreditCardToken(
 )
 ```
 
+## Handling Bolt user login
+
+The Bolt SDK does not provide functionality for logging users into their existing Bolt account. However, this can be implemented directly in the app using your existing networking implementation and standard webviews. These are the steps required for enabling existing Bolt users to login:
+
+### 1. Detect user account
+
+First, we need to detect if a user has an existing Bolt account.
+- In your checkout form, add a handler to the email address text field. This can be done using [UITextField.textFieldDidEndEditing(_:)](https://developer.apple.com/documentation/uikit/uitextfielddelegate/1619591-textfielddidendediting) in UIKit, or [TextField.onSubmit(of:_:)](https://developer.apple.com/documentation/swiftui/view/onsubmit(of:_:)) in SwiftUI.
+- In this handler, call Bolt's [DetectAccount](https://help.bolt.com/api-bolt/#tag/Account/operation/DetectAccount) API with the email address and your merchant publishable key (can be found in Bolt Merchant Dashboard).
+- If successful, the API will return a value indicating whether the email address is registered to a Bolt account:
+```
+{
+    "has_bolt_account": true,
+}
+```
+- If a Bolt account was detected, follow the next step to display the Bolt authorization page.
+
+### 2. Display Bolt authorization page
+
+The Bolt authorization page displays a prompt that asks users to input a one-time passcode (OTP) that is sent to their email or phone. After a user enters the OTP, the page redirects to a URL that contains an authorization code in the query parameters. This authorization code can then be sent to the merchant server to exchange for an OAuth access token. This can then be used to access Bolt Account APIs and access user information such as stored shipping addresses and credit cards.
+
+- Create a `WKWebView` object and set the `navigationDelegate` property to an object that conforms to `WKNavigationDelegate`.
+- Add an implementation for [WKNavigationDelegate.webView(_:decidePolicyFor:decisionHandler:)](https://developer.apple.com/documentation/webkit/wknavigationdelegate/1455641-webview) that detects redirects and performs the appropriate action.
+```swift
+func webView(
+    _ webView: WKWebView,
+    decidePolicyFor navigationAction: WKNavigationAction,
+    decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+) {
+    guard let urlString = navigationAction.request.url?.absoluteString,
+          let url = URL(string: urlString) else {
+        return decisionHandler(.allow)
+    }
+
+    if urlString.hasPrefix("mobileapp://"), let range = urlString.range(of: "authorization_code=") {
+        // We have a redirect with auth code in the query parameters
+        let index = urlString.distance(from: urlString.startIndex, to: range.upperBound)
+        let startIndex = urlString.index(urlString.startIndex, offsetBy: index)
+        let authCode = String(urlString[startIndex...])
+        decisionHandler(.allow)
+        // Pass authCode to backend to exchange for OAuth access token
+        // WebView can be dismissed at this point
+    } else if urlString == parent.url.absoluteString {
+        // This is the original URL request - open as normal
+        decisionHandler(.allow)
+    } else {
+        // Open other links in the system browser, e.g. Terms of Use, Privacy Policy
+        UIApplication.shared.open(url)
+        decisionHandler(.cancel)
+    }
+}
+```
+- Load the URL below in the webview, filling in the publishable key and email address in the query parameters:
+```
+Production: https://account.bolt.com/hosted?email=email&publishableKey=publishableKey
+Sandbox: https://account-sandbox.bolt.com/hosted?email=email&publishableKey=publishableKey
+```
+- Embed the `WKWebView` inside a `UIViewController` in UIKit or a `UIViewRepresentable` in SwiftUI and present it as a fullscreen modal.
+
+This will show a page that looks like this:
+
+![OTP page](https://help.bolt.com/images/accounts/otp-modal-embedded.png | width=200)
+
+After the authorization code is received, pass it to your backend server which can use Bolt's [OAuthToken](https://help.bolt.com/api-bolt/#tag/OAuth/operation/OAuthToken) endpoint to exchange for an access token. The access token can be used with Bolt's [Account](https://help.bolt.com/api-embedded/#tag/Account) APIs to access the user's information.
+
 ## Example app
 
-The [Example](./Example) folder contains an example app that demonstrates usage of the SDK.
+The [Example](./Example) folder contains an example app that demonstrates usage of the credit card tokenizer and Bolt user login.
