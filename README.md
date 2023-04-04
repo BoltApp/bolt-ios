@@ -131,9 +131,7 @@ Sandbox: https://account-sandbox.bolt.com/hosted?email=email&publishableKey=publ
 ```
 - Embed the `WKWebView` inside a `UIViewController` in UIKit or a `UIViewRepresentable` in SwiftUI and present it as a fullscreen modal.
 
-This will show a page that looks like this:
-
-![OTP page](https://help.bolt.com/images/accounts/otp-modal-embedded.png | width=200)
+This will show a page that looks like [this](https://user-images.githubusercontent.com/3752642/229895787-197b20b7-4187-4c88-9bdf-a17a8cb28896.png).
 
 After the authorization code is received, pass it to your backend server which can use Bolt's [OAuthToken](https://help.bolt.com/api-bolt/#tag/OAuth/operation/OAuthToken) endpoint to exchange for an access token. The access token can be used with Bolt's [Account](https://help.bolt.com/api-embedded/#tag/Account) APIs to access the user's information.
 
