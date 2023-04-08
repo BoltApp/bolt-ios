@@ -137,4 +137,4 @@ After the authorization code is received, pass it to your backend server which c
 
 ## Example app
 
-The [Example](./Example) folder contains an example app that demonstrates usage of the credit card tokenizer and Bolt user login.
+The [Example](./Example) folder contains an example app that demonstrates usage of the credit card tokenizer, Bolt user login, and account creation checkbox.

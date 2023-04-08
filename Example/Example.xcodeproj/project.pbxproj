@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC174EA629E1FF0300A631BE /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC174EA529E1FF0300A631BE /* CreateAccountView.swift */; };
 		EC665F4A29D65ED500C1ABBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC665F4929D65ED500C1ABBE /* LoginView.swift */; };
 		EC665F4C29D7065C00C1ABBE /* TokenizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */; };
 		ECEA8E8E29C77A49004BFEDD /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA8E8D29C77A49004BFEDD /* ExampleApp.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC174EA529E1FF0300A631BE /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		EC665F4929D65ED500C1ABBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerView.swift; sourceTree = "<group>"; };
 		ECEA8E8A29C77A49004BFEDD /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 				EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */,
 				EC665F4929D65ED500C1ABBE /* LoginView.swift */,
 				ECEA8EC329D63DB8004BFEDD /* WebView.swift */,
+				EC174EA529E1FF0300A631BE /* CreateAccountView.swift */,
 				ECEA8E9129C77A4B004BFEDD /* Assets.xcassets */,
 				ECEA8E9329C77A4B004BFEDD /* Preview Content */,
 			);
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC174EA629E1FF0300A631BE /* CreateAccountView.swift in Sources */,
 				ECEA8EC429D63DB8004BFEDD /* WebView.swift in Sources */,
 				ECEA8E9029C77A49004BFEDD /* HomeView.swift in Sources */,
 				EC665F4C29D7065C00C1ABBE /* TokenizerView.swift in Sources */,
@@ -303,7 +307,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,7 +337,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

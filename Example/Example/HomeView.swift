@@ -28,6 +28,11 @@ struct HomeView: View {
         } label: {
           Text("Credit card tokenizer")
         }
+        NavigationLink {
+          CreateAccountView()
+        } label: {
+          Text("Create Bolt account checkbox")
+        }
         HStack {
           Text("Environment")
           Picker("Options", selection: $environment) {
