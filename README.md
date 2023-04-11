@@ -106,6 +106,7 @@ func webView(
         return decisionHandler(.allow)
     }
 
+    // NOTE: replace 'mobileapp' below with the prefix used for your app for Bolt login
     if urlString.hasPrefix("mobileapp://"), let range = urlString.range(of: "authorization_code=") {
         // We have a redirect with auth code in the query parameters
         let index = urlString.distance(from: urlString.startIndex, to: range.upperBound)
