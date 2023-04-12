@@ -12,7 +12,7 @@ struct CreateAccountView: View {
 
   private enum Layout {
     static let verticalPadding: CGFloat = 4
-    static let horizontalPadding: CGFloat = 12
+    static let horizontalPadding: CGFloat = 8
   }
 
   var body: some View {
@@ -78,8 +78,9 @@ private struct CreateBoltAccountView: View {
     func makeUIView(context: Context) -> UILabel {
       let label = UILabel()
 
-      label.numberOfLines = 0
+      label.numberOfLines = 1
       label.lineBreakMode = .byWordWrapping
+      label.adjustsFontSizeToFitWidth = true
 
       // Prevent label from expanding past available width
       label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -122,7 +123,7 @@ private extension NSMutableAttributedString {
 private extension NSAttributedString {
   /// Create attributed string with image
   static func image(_ image: UIImage) -> NSAttributedString {
-    let imageScale = 1.5
+    let imageScale = 1.25
     let imageSize = CGSize(
       width: image.size.width * imageScale,
       height: image.size.height * imageScale
@@ -142,7 +143,7 @@ private extension NSAttributedString {
 
   /// Create attributed string for spacer used between image and text
   static var spacer: NSAttributedString {
-    let spacerSize = CGSize(width: 4, height: 0)
+    let spacerSize = CGSize(width: 2, height: 0)
     let spacerAttachment = NSTextAttachment()
     spacerAttachment.bounds = .init(origin: .zero, size: spacerSize)
 
