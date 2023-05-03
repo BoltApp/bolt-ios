@@ -30,10 +30,8 @@ The SDK needs to be initialized with client properties before usage. The followi
 ```swift
 import Bolt
 
-var clientProperties = Bolt.ClientProperties.shared
-
-clientProperties.publishableKey = "<key>"
-clientProperties.environment = .staging
+Bolt.ClientProperties.shared.publishableKey = "<key>"
+Bolt.ClientProperties.shared.environment = .staging
 ```
 
 ## Credit card tokenizer
