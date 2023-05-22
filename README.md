@@ -2,15 +2,15 @@
 
 The Bolt iOS SDK enables merchants to integrate their apps with Bolt Checkout.
 
-## Getting SDK using Swift Package Manager
+## Getting SDK
 
-The SDK is available as an `XCFramework` bundle that contains pre-built frameworks for iOS devices and simulators.
-Minimum iOS target version is 13.0.
-The framework can be added by following these steps:
+The SDK is available as an `XCFramework` bundle that contains pre-built frameworks for iOS devices and simulators. Swift Package Manager and Cocoapods are supported package managers. Minimum iOS target version is 13.0.
+
+### Swift Package Manager
 
 1. Add package to Xcode project:
  - Go to File -> Add Packages
- - Enter the package [URL](https://github.com/BoltApp/bolt-ios)
+ - Enter the package URL - https://github.com/BoltApp/bolt-ios
  - Click on Add Package
 2. Add framework to app target, if not automatically added:
  - Click on app project in project navigator
@@ -18,6 +18,11 @@ The framework can be added by following these steps:
  - Select the General tab
  - Click on the + icon in Frameworks, Libraries and Embedded Content
  - Add Bolt module
+
+### Cocoapods
+
+1. Add `pod 'Bolt'` to your project's Podfile
+2. Run `pod install`
 
 ## Initializing SDK
 
