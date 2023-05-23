@@ -77,6 +77,9 @@ CreditCardToken(
 
 ## Handling Bolt user login
 
+<img src="https://github.com/BoltApp/bolt-ios/assets/3752642/aa2fd190-a1bb-41c8-a5e0-84418ad0439f" width="300">
+<p>&nbsp;</p>
+
 The Bolt SDK does not provide functionality for logging users into their existing Bolt account. However, this can be implemented directly in the app using your existing networking implementation and standard webviews. These are the steps required for enabling existing Bolt users to login:
 
 ### 1. Detect user account
@@ -133,11 +136,15 @@ func webView(
 Production: https://account.bolt.com/hosted?email=email&publishableKey=publishableKey
 Sandbox: https://account-sandbox.bolt.com/hosted?email=email&publishableKey=publishableKey
 ```
-- Embed the `WKWebView` inside a `UIViewController` in UIKit or a `UIViewRepresentable` in SwiftUI and present it as a fullscreen modal.
-
-This will show a page that looks like [this](https://user-images.githubusercontent.com/3752642/229895787-197b20b7-4187-4c88-9bdf-a17a8cb28896.png).
+- Embed the `WKWebView` inside a `UIViewController` in UIKit or a `UIViewRepresentable` in SwiftUI and present it as a fullscreen modal. A fullscreen modal should be used to ensure that there is space to show the keyboard and any error messages in the webpage.
 
 After the authorization code is received, pass it to your backend server which can use Bolt's [OAuthToken](https://help.bolt.com/api-bolt/#tag/OAuth/operation/OAuthToken) endpoint to exchange for an access token. The access token can be used with Bolt's [Account](https://help.bolt.com/api-embedded/#tag/Account) APIs to access the user's information.
+
+## Account creation checkbox
+
+![account creation](https://github.com/BoltApp/bolt-ios/assets/3752642/2ef8e3e8-b584-484d-be02-f5c2975073bc)
+
+A checkbox can be added to the checkout screen to enable users to create a Bolt account when they place the order. In order to add images inline with the text, `NSAttributedString` along with `NSTextAttachment` can be used. A SwiftUI implementation example is provided in [CreateAccountView.swift](./Example/Example/CreateAccountView.swift). It uses `UIViewRepresentable` to wrap a `UILabel` that is set with an attributed string containing the text and Bolt logo.
 
 ## Example app
 
