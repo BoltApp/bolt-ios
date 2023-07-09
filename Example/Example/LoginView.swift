@@ -5,12 +5,10 @@
 //  Created by Mehul Dhorda on 3/30/23.
 //
 
+import Bolt
 import SwiftUI
 
 struct LoginView: View {
-  let environment: Environment
-
-  @AppStorage("publishableKey") var publishableKey = ""
   @State var email = ""
   @State var authCode = ""
   @State var showOTPView = false
@@ -18,14 +16,12 @@ struct LoginView: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .leading) {
-        Text("Enter publishable key from Bolt Merchant Dashboard and Bolt user email address.\n\nIf a Bolt account exists with the email address, an OTP login view will be displayed after the email is entered.\n\nAccount can be created at ")
+        Text("If a Bolt account exists with the email address, an OTP login view will be displayed after the email is entered.\n\nAccount can be created at ")
         Text(environment.accountUrl)
           .foregroundColor(.blue)
           .underline()
           .onTapGesture { UIApplication.shared.open(URL(string: environment.accountUrl)!) }
           .padding([.bottom])
-        TextField("Publishable key", text: $publishableKey)
-          .textFieldStyle(RoundedBorderTextFieldStyle())
         TextField("Email", text: $email) {
           detectBoltAccount()
         }
@@ -41,7 +37,7 @@ struct LoginView: View {
     .padding()
     .navigationTitle("OTP login")
     .sheet(isPresented: $showOTPView) {
-      let url = URL(string: "\(environment.accountUrl)/hosted?email=\(email)&publishableKey=\(publishableKey)")!
+      let url = Bolt.Login.getAuthorizationURL(email: email)!
       WebView(url: url) { authCode in
         self.authCode = authCode
         showOTPView = false
@@ -51,6 +47,10 @@ struct LoginView: View {
 }
 
 private extension LoginView {
+  var environment: Bolt.Environment {
+    Bolt.ClientProperties.shared.environment
+  }
+
   func detectBoltAccount() {
     // Call DetectAccount API - https://help.bolt.com/api-bolt/#tag/Account/operation/DetectAccount
     let url = URL(string: "\(environment.apiUrl)/v1/account/exists?email=\(email)")!
@@ -69,11 +69,12 @@ private extension LoginView {
   }
 }
 
-private extension Environment {
+private extension Bolt.Environment {
   var accountUrl: String {
     switch self {
     case .sandbox: return "https://account-sandbox.bolt.com"
     case .production: return "https://account.bolt.com"
+    @unknown default: fatalError()
     }
   }
 
@@ -81,6 +82,7 @@ private extension Environment {
     switch self {
     case .sandbox: return "https://api-sandbox.bolt.com"
     case .production: return "https://api.bolt.com"
+    @unknown default: fatalError()
     }
   }
 }
@@ -88,7 +90,7 @@ private extension Environment {
 struct LoginView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      LoginView(environment: .sandbox)
+      LoginView()
     }
   }
 }

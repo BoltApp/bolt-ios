@@ -5,26 +5,27 @@
 //  Created by Mehul Dhorda on 3/19/23.
 //
 
+import Bolt
 import SwiftUI
 
-enum Environment: String, CaseIterable {
-  case sandbox = "Sandbox"
-  case production = "Production"
-}
-
 struct HomeView: View {
-  @State var environment = Environment.sandbox
+  @AppStorage("publishableKey") var publishableKey = ""
+  @State var environment = Bolt.Environment.sandbox
+
+  init() {
+    Bolt.ClientProperties.shared.environment = environment
+  }
   
   var body: some View {
     NavigationView {
       List {
         NavigationLink {
-          LoginView(environment: environment)
+          LoginView()
         } label: {
           Text("OTP login")
         }
         NavigationLink {
-          TokenizerView(environment: environment)
+          TokenizerView()
         } label: {
           Text("Credit card tokenizer")
         }
@@ -33,14 +34,29 @@ struct HomeView: View {
         } label: {
           Text("Create Bolt account checkbox")
         }
+        NavigationLink {
+          AnalyticsView()
+        } label: {
+          Text("Analytics")
+        }
+        Spacer()
+        Text("Settings:")
         HStack {
           Text("Environment")
           Picker("Options", selection: $environment) {
-            ForEach(Environment.allCases, id: \.self) { option in
-              Text(option.rawValue).tag(option)
-            }
+            Text("Sandbox").tag(Bolt.Environment.sandbox)
+            Text("Production").tag(Bolt.Environment.production)
           }
           .pickerStyle(.segmented)
+          .onChange(of: environment) { newValue in
+            Bolt.ClientProperties.shared.environment = environment
+          }
+        }
+        VStack {
+          TextField("Publishable key", text: $publishableKey) {
+            Bolt.ClientProperties.shared.publishableKey = publishableKey
+          }
+          .textFieldStyle(RoundedBorderTextFieldStyle())
         }
       }
       .listStyle(.plain)

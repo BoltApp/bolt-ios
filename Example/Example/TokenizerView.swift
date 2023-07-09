@@ -11,10 +11,6 @@ import SwiftUI
 struct TokenizerView: View {
   private let tokenizer = Bolt.CreditCardTokenizer()
 
-  init(environment: Environment) {
-    Bolt.ClientProperties.shared.environment = environment.asBoltEnvironment
-  }
-
   @State var creditCardNumber = ""
   @State var cvvNumber = ""
   @State var tokenizeResult = ""
@@ -79,19 +75,10 @@ private extension TokenizerView {
   }
 }
 
-private extension Environment {
-  var asBoltEnvironment: Bolt.Environment {
-    switch self {
-    case .sandbox: return .sandbox
-    case .production: return .production
-    }
-  }
-}
-
 struct TokenizerView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      TokenizerView(environment: .sandbox)
+      TokenizerView()
     }
   }
 }

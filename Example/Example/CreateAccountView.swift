@@ -36,6 +36,7 @@ struct CreateAccountView: View {
       }
       .padding()
     }
+    .navigationTitle("Create Bolt account")
   }
 
   private var disclaimerText: AttributedString = {
