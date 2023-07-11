@@ -27,7 +27,7 @@ The SDK is available as an `XCFramework` bundle that contains pre-built framewor
 ## Initializing SDK
 
 The SDK needs to be initialized with client properties before usage. The following properties can be specified:
-1. __Publishable key__: the publicly viewable identifier used to identify a merchant division. This key is found in the Developer > API section of the Bolt Merchant Dashboard.
+1. __Publishable key__: the publicly viewable identifier used to identify a merchant division. This key is found in the Administration -> Developers -> API section of the Bolt Merchant Dashboard.
 2. __Environment__: the Bolt server environment to use, e.g. `staging` or `production`.
 
 ### Initialization example
@@ -80,7 +80,7 @@ CreditCardToken(
 <img src="https://github.com/BoltApp/bolt-ios/assets/3752642/aa2fd190-a1bb-41c8-a5e0-84418ad0439f" width="300">
 <p>&nbsp;</p>
 
-The Bolt SDK does not provide functionality for logging users into their existing Bolt account. However, this can be implemented directly in the app using your existing networking implementation and standard webviews. These are the steps required for enabling existing Bolt users to login:
+These are the steps required for enabling existing Bolt users to login:
 
 ### 1. Detect user account
 
@@ -131,14 +131,61 @@ func webView(
     }
 }
 ```
-- Load the URL below in the webview, filling in the publishable key and email address in the query parameters:
-```
-Production: https://account.bolt.com/hosted?email=email&publishableKey=publishableKey
-Sandbox: https://account-sandbox.bolt.com/hosted?email=email&publishableKey=publishableKey
+- Get the Bolt authorization URL and load it in the webview. The URL can be force unwrapped safely, it will only return nil if the publishable key was not set in the Initialization step.
+```swift
+let url = Bolt.Login.getAuthorizationURL(email: "user@email.com")!
+webView.load(.init(url: url))
 ```
 - Embed the `WKWebView` inside a `UIViewController` in UIKit or a `UIViewRepresentable` in SwiftUI and present it as a fullscreen modal. A fullscreen modal should be used to ensure that there is space to show the keyboard and any error messages in the webpage.
 
 After the authorization code is received, pass it to your backend server which can use Bolt's [OAuthToken](https://help.bolt.com/api-bolt/#tag/OAuth/operation/OAuthToken) endpoint to exchange for an access token. The access token can be used with Bolt's [Account](https://help.bolt.com/api-embedded/#tag/Account) APIs to access the user's information.
+
+## Implementing checkout analytics (optional)
+
+Merchants can invoke an analytics method that tracks checkout funnel events. This is an optional step and is useful for gathering data on the user's shopping journey from checkout to payment. There are several predefined events that can be tracked at specific points in the checkout flow. Example call to make when Checkout button is tapped from the shopping cart:
+
+```swift
+Bolt.Analytics.log(.checkoutButtonTapped)
+```
+
+### Event listing
+
+Events are defined in the `Bolt.Analytics.Event` enum:
+
+| Event name | When to track event |
+| --- | --- |
+| checkoutButtonTapped | Checkout button is tapped from shopping cart |
+| checkoutLoadSuccess | Initial checkout screen is fully loaded |
+| checkoutLoadError | An error occurs that prevents checkout screen from being loaded |
+| shippingAddressEntryBegan | User began inputting information on shipping address |
+| shippingDetailsFullyEntered | User entered all fields on the shipping address screen |
+| shippingContinueButtonTapped | User tapped button to continue checkout process on the shipping address screen |
+| shippingMethodSelected | User selects or switches shipping method |
+| boltAccountExistenceCheckRequested | Bolt DetectAccount API was called to check if Bolt account exists |
+| boltAccountExistenceCheckReceived | Bolt DetectAccount API response was received |
+| boltAccountCreationCheckboxTapped | User checked Bolt account creation checkbox |
+| boltLoginScreenDisplayed | OTP prompt is displayed for user login |
+| boltLoginScreenClosed | OTP prompt is closed |
+| boltLogOutButtonTapped | User taps button to log out of Bolt account |
+| paymentDetailsFullyEntered | User entered all fields on payment screen or selects a saved payment method |
+| paymentMethodSelected | User selects a new payment method |
+| paymentButtonTapped | User tapped payment button |
+| paymentSuccessful | Order was successful placed |
+| paymentFailed | Order failed at payment step |
+
+### Adding custom data
+
+Custom properties can be included in all events or in specific events. These properties are key value pairs where the key is a `String` and value is any type that conforms to `Encodable`. For adding to all events, use the `setCommonProperties` function. For example, to add a property that represents whether the user is logged into the merchant account:
+
+```swift
+Bolt.Analytics.setCommonProperties(["merchantLoggedIn": true])
+```
+
+To add a property to a specific event, use the `additionalProperties` parameter in the `log` function:
+
+```swift
+Bolt.Analytics.log(.checkoutButtonTapped, ["merchantLoggedIn": true])
+```
 
 ## Account creation checkbox
 
@@ -148,4 +195,4 @@ A checkbox can be added to the checkout screen to enable users to create a Bolt 
 
 ## Example app
 
-The [Example](./Example) folder contains an example app that demonstrates usage of the credit card tokenizer, Bolt user login, and account creation checkbox.
+The [Example](./Example) folder contains an example app that demonstrates usage of the credit card tokenizer, Bolt user login, checkout analytics, and account creation checkbox.

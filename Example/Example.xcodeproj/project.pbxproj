@@ -384,7 +384,7 @@
 			repositoryURL = "https://github.com/BoltApp/bolt-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
