@@ -14,6 +14,7 @@ struct HomeView: View {
 
   init() {
     Bolt.ClientProperties.shared.environment = environment
+    Bolt.ClientProperties.shared.publishableKey = publishableKey
   }
   
   var body: some View {

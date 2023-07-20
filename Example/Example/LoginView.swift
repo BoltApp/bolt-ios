@@ -53,8 +53,7 @@ private extension LoginView {
 
   func detectBoltAccount() {
     // Call DetectAccount API - https://help.bolt.com/api-bolt/#tag/Account/operation/DetectAccount
-    let url = URL(string: "\(environment.apiUrl)/v1/account/exists?email=\(email)")!
-    URLSession.shared.dataTask(with: url) { data, response, _ in
+    URLSession.shared.dataTask(with: detectBoltAccountUrlRequest) { data, response, _ in
       guard let data = data,
             let responseJSON = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
             let hasBoltAccount = responseJSON["has_bolt_account"] as? Int,
@@ -67,6 +66,25 @@ private extension LoginView {
     }
     .resume()
   }
+
+  private var detectBoltAccountUrlRequest: URLRequest {
+    var components = URLComponents()
+    components.scheme = "https"
+    components.host = environment.apiHost
+    components.path = "/v1/account/exists"
+    components.queryItems = [.init(name: "email", value: email)]
+
+    // Usually the + character is not encoded into %2B since it's a valid character allowed in a query parameter (spaces are replaced with +).
+    // In order to pass in an actual + sign, the specific character needs to be URL encoded.
+    // This enables email containing a + sign to be encoded correctly.
+    components.percentEncodedQuery = components.percentEncodedQuery?.addingPercentEncoding(
+      withAllowedCharacters: .init(charactersIn: "+").inverted
+    )
+
+    var request = URLRequest(url: components.url!)
+    request.setValue(Bolt.ClientProperties.shared.publishableKey, forHTTPHeaderField: "X-Publishable-Key")
+    return request
+  }
 }
 
 private extension Bolt.Environment {
@@ -78,10 +96,10 @@ private extension Bolt.Environment {
     }
   }
 
-  var apiUrl: String {
+  var apiHost: String {
     switch self {
-    case .sandbox: return "https://api-sandbox.bolt.com"
-    case .production: return "https://api.bolt.com"
+    case .sandbox: return "api-sandbox.bolt.com"
+    case .production: return "api.bolt.com"
     @unknown default: fatalError()
     }
   }
