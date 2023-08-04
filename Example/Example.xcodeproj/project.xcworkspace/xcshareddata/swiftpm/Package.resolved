@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/BoltApp/bolt-ios",
       "state" : {
-        "revision" : "3c77ef1fb45d0a009e6e3d86b4045718d35bd016",
-        "version" : "1.0.1"
+        "revision" : "1667135a2ea753f38bab8ac2b90966a8ee209a62",
+        "version" : "1.0.2"
       }
     }
   ],
