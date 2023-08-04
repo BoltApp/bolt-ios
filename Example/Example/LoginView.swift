@@ -22,7 +22,13 @@ struct LoginView: View {
           .underline()
           .onTapGesture { UIApplication.shared.open(URL(string: environment.accountUrl)!) }
           .padding([.bottom])
-        TextField("Email", text: $email) {
+        TextField(
+          "Email",
+          text: Binding(
+            get: { email },
+            set: { email = $0.whitespaceTrimmed }
+          )
+        ) {
           detectBoltAccount()
         }
         .keyboardType(.emailAddress)
@@ -102,6 +108,16 @@ private extension Bolt.Environment {
     case .production: return "api.bolt.com"
     @unknown default: fatalError()
     }
+  }
+}
+
+private extension String {
+  var whitespaceTrimmed: String {
+    replacingOccurrences(
+      of: "\\s",
+      with: "",
+      options: .regularExpression
+    )
   }
 }
 

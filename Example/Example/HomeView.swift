@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
   @AppStorage("publishableKey") var publishableKey = ""
-  @State var environment = Bolt.Environment.sandbox
+  @AppStorage("environment") var environment = Bolt.Environment.sandbox
 
   init() {
     Bolt.ClientProperties.shared.environment = environment
@@ -54,9 +54,10 @@ struct HomeView: View {
           }
         }
         VStack {
-          TextField("Publishable key", text: $publishableKey) {
-            Bolt.ClientProperties.shared.publishableKey = publishableKey
-          }
+          TextField("Publishable key", text: $publishableKey)
+            .onChange(of: publishableKey) { newValue in
+              Bolt.ClientProperties.shared.publishableKey = newValue
+            }
           .textFieldStyle(RoundedBorderTextFieldStyle())
         }
       }
