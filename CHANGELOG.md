@@ -1,5 +1,8 @@
-
 ## Change Log
+
+### [1.0.3] - 2023-08-24
+
+- Added "Billing details entered" event to analytics API
 
 ### [1.0.2] - 2023-08-04
 

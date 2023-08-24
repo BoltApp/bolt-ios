@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
 
 s.name = "Bolt"
 s.summary = "The Bolt iOS SDK enables merchants to integrate their apps with Bolt Checkout."
-s.version = "1.0.2"
+s.version = "1.0.3"
 s.author = { "Bolt Financial" => "support@bolt.com" }
 
 s.homepage = "https://bolt.com"
 s.readme = "https://raw.githubusercontent.com/BoltApp/bolt-ios/master/README.md"
-s.source = { :http => "https://bolt-mobile-sdk.s3.us-west-2.amazonaws.com/1.0.2/Bolt.xcframework.zip" }
+s.source = { :http => "https://bolt-mobile-sdk.s3.us-west-2.amazonaws.com/1.0.3/Bolt.xcframework.zip" }
 s.ios.vendored_frameworks = "Bolt.xcframework"
 
 s.platform = :ios
