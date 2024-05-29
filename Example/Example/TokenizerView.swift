@@ -56,7 +56,6 @@ struct TokenizerView: View {
       Spacer()
     }
     .padding()
-    .navigationTitle("Credit card tokenizer")
   }
 }
 

@@ -20,26 +20,10 @@ struct HomeView: View {
   var body: some View {
     NavigationView {
       List {
-        NavigationLink {
-          LoginView()
-        } label: {
-          Text("OTP login")
-        }
-        NavigationLink {
-          TokenizerView()
-        } label: {
-          Text("Credit card tokenizer")
-        }
-        NavigationLink {
-          CreateAccountView()
-        } label: {
-          Text("Create Bolt account checkbox")
-        }
-        NavigationLink {
-          AnalyticsView()
-        } label: {
-          Text("Analytics")
-        }
+        NavLink(view: SwiftUIComponentsView(), title: "SwiftUI components")
+        NavLink(view: UIKitComponentsView(), title: "UIKit components")
+        NavLink(view: TokenizerView(), title: "Credit card tokenizer")
+        NavLink(view: AnalyticsView(), title: "Analytics")
         Spacer()
         Text("Settings:")
         HStack {

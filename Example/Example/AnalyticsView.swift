@@ -40,7 +40,6 @@ struct AnalyticsView: View {
       .padding()
       .frame(maxWidth: .infinity, alignment: .leading)
     }
-    .navigationTitle("Analytics")
   }
 }
 

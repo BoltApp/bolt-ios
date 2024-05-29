@@ -7,29 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC174EA629E1FF0300A631BE /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC174EA529E1FF0300A631BE /* CreateAccountView.swift */; };
+		EC44FE5B2BA63431006608A3 /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = EC44FE5A2BA63431006608A3 /* Bolt */; };
+		EC45CB2E2BEBA40900CD04A9 /* CheckoutSignInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB2D2BEBA40900CD04A9 /* CheckoutSignInButtonView.swift */; };
+		EC45CB302BEBAE4E00CD04A9 /* UIKitComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */; };
+		EC45CB332BEBB00100CD04A9 /* EmailInfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB322BEBB00100CD04A9 /* EmailInfoButtonViewController.swift */; };
+		EC45CB352BEC67A800CD04A9 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB342BEC67A800CD04A9 /* ViewUtils.swift */; };
 		EC5256D22A56393F003EA12A /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5256D12A56393F003EA12A /* AnalyticsView.swift */; };
-		EC665F4A29D65ED500C1ABBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC665F4929D65ED500C1ABBE /* LoginView.swift */; };
 		EC665F4C29D7065C00C1ABBE /* TokenizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */; };
+		EC93C6E52BA1D018002E1C92 /* SwiftUIComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93C6E42BA1D018002E1C92 /* SwiftUIComponentsView.swift */; };
+		EC93C6E82BA1D152002E1C92 /* EmailInfoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93C6E72BA1D152002E1C92 /* EmailInfoButtonView.swift */; };
+		EC93C6EE2BA1D624002E1C92 /* PreCheckoutSignInButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93C6ED2BA1D624002E1C92 /* PreCheckoutSignInButtonView.swift */; };
+		EC93C6F02BA1D76B002E1C92 /* SignedInStatusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93C6EF2BA1D76B002E1C92 /* SignedInStatusButtonView.swift */; };
+		EC93C6F22BA1D7F8002E1C92 /* AccountCreationCheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93C6F12BA1D7F8002E1C92 /* AccountCreationCheckboxView.swift */; };
+		ECA8C7722C074554008D8EC6 /* SignedInStatusButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8C7712C074554008D8EC6 /* SignedInStatusButtonViewController.swift */; };
+		ECA8C7742C074685008D8EC6 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8C7732C074685008D8EC6 /* UIViewController+AddChild.swift */; };
+		ECA8C7762C0747E7008D8EC6 /* AccountCreationCheckboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8C7752C0747E7008D8EC6 /* AccountCreationCheckboxViewController.swift */; };
+		ECA8C7782C07580A008D8EC6 /* PreCheckoutSignInButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8C7772C07580A008D8EC6 /* PreCheckoutSignInButtonViewController.swift */; };
+		ECA8C77A2C075C3B008D8EC6 /* CheckoutSignInButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8C7792C075C3B008D8EC6 /* CheckoutSignInButtonViewController.swift */; };
+		ECA8C77C2C075F69008D8EC6 /* UITextField+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA8C77B2C075F69008D8EC6 /* UITextField+UserDefaults.swift */; };
 		ECEA8E8E29C77A49004BFEDD /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA8E8D29C77A49004BFEDD /* ExampleApp.swift */; };
 		ECEA8E9029C77A49004BFEDD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA8E8F29C77A49004BFEDD /* HomeView.swift */; };
 		ECEA8E9229C77A4B004BFEDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECEA8E9129C77A4B004BFEDD /* Assets.xcassets */; };
 		ECEA8E9529C77A4B004BFEDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECEA8E9429C77A4B004BFEDD /* Preview Assets.xcassets */; };
-		ECEA8EC229C91FA8004BFEDD /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = ECEA8EC129C91FA8004BFEDD /* Bolt */; };
-		ECEA8EC429D63DB8004BFEDD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEA8EC329D63DB8004BFEDD /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC174EA529E1FF0300A631BE /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		EC44FE592BA63413006608A3 /* BuildOutput */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BuildOutput; path = "../../bolt-ios-sdk/BuildOutput"; sourceTree = "<group>"; };
+		EC45CB2D2BEBA40900CD04A9 /* CheckoutSignInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSignInButtonView.swift; sourceTree = "<group>"; };
+		EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitComponentsView.swift; sourceTree = "<group>"; };
+		EC45CB322BEBB00100CD04A9 /* EmailInfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInfoButtonViewController.swift; sourceTree = "<group>"; };
+		EC45CB342BEC67A800CD04A9 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		EC5256D12A56393F003EA12A /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
-		EC665F4929D65ED500C1ABBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerView.swift; sourceTree = "<group>"; };
+		EC93C6E42BA1D018002E1C92 /* SwiftUIComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIComponentsView.swift; sourceTree = "<group>"; };
+		EC93C6E72BA1D152002E1C92 /* EmailInfoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInfoButtonView.swift; sourceTree = "<group>"; };
+		EC93C6ED2BA1D624002E1C92 /* PreCheckoutSignInButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreCheckoutSignInButtonView.swift; sourceTree = "<group>"; };
+		EC93C6EF2BA1D76B002E1C92 /* SignedInStatusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInStatusButtonView.swift; sourceTree = "<group>"; };
+		EC93C6F12BA1D7F8002E1C92 /* AccountCreationCheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationCheckboxView.swift; sourceTree = "<group>"; };
+		ECA8C7712C074554008D8EC6 /* SignedInStatusButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInStatusButtonViewController.swift; sourceTree = "<group>"; };
+		ECA8C7732C074685008D8EC6 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
+		ECA8C7752C0747E7008D8EC6 /* AccountCreationCheckboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationCheckboxViewController.swift; sourceTree = "<group>"; };
+		ECA8C7772C07580A008D8EC6 /* PreCheckoutSignInButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreCheckoutSignInButtonViewController.swift; sourceTree = "<group>"; };
+		ECA8C7792C075C3B008D8EC6 /* CheckoutSignInButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSignInButtonViewController.swift; sourceTree = "<group>"; };
+		ECA8C77B2C075F69008D8EC6 /* UITextField+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+UserDefaults.swift"; sourceTree = "<group>"; };
 		ECEA8E8A29C77A49004BFEDD /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEA8E8D29C77A49004BFEDD /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		ECEA8E8F29C77A49004BFEDD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ECEA8E9129C77A4B004BFEDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECEA8E9429C77A4B004BFEDD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ECEA8EC329D63DB8004BFEDD /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,16 +62,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECEA8EC229C91FA8004BFEDD /* Bolt in Frameworks */,
+				EC44FE5B2BA63431006608A3 /* Bolt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC45CB312BEBAE8C00CD04A9 /* UIKitComponents */ = {
+			isa = PBXGroup;
+			children = (
+				ECA8C7772C07580A008D8EC6 /* PreCheckoutSignInButtonViewController.swift */,
+				ECA8C7792C075C3B008D8EC6 /* CheckoutSignInButtonViewController.swift */,
+				EC45CB322BEBB00100CD04A9 /* EmailInfoButtonViewController.swift */,
+				ECA8C7712C074554008D8EC6 /* SignedInStatusButtonViewController.swift */,
+				ECA8C7752C0747E7008D8EC6 /* AccountCreationCheckboxViewController.swift */,
+			);
+			path = UIKitComponents;
+			sourceTree = "<group>";
+		};
+		EC93C6E62BA1D105002E1C92 /* SwiftUIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EC93C6ED2BA1D624002E1C92 /* PreCheckoutSignInButtonView.swift */,
+				EC45CB2D2BEBA40900CD04A9 /* CheckoutSignInButtonView.swift */,
+				EC93C6E72BA1D152002E1C92 /* EmailInfoButtonView.swift */,
+				EC93C6EF2BA1D76B002E1C92 /* SignedInStatusButtonView.swift */,
+				EC93C6F12BA1D7F8002E1C92 /* AccountCreationCheckboxView.swift */,
+			);
+			path = SwiftUIComponents;
+			sourceTree = "<group>";
+		};
+		EC93C6E92BA1D23D002E1C92 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				EC44FE592BA63413006608A3 /* BuildOutput */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		ECEA8E8129C77A49004BFEDD = {
 			isa = PBXGroup;
 			children = (
+				EC93C6E92BA1D23D002E1C92 /* Packages */,
 				ECEA8E8C29C77A49004BFEDD /* Example */,
 				ECEA8E8B29C77A49004BFEDD /* Products */,
 				ECEA8EC029C91FA8004BFEDD /* Frameworks */,
@@ -64,13 +122,17 @@
 		ECEA8E8C29C77A49004BFEDD /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				EC45CB312BEBAE8C00CD04A9 /* UIKitComponents */,
+				EC93C6E62BA1D105002E1C92 /* SwiftUIComponents */,
 				ECEA8E8D29C77A49004BFEDD /* ExampleApp.swift */,
 				ECEA8E8F29C77A49004BFEDD /* HomeView.swift */,
+				EC93C6E42BA1D018002E1C92 /* SwiftUIComponentsView.swift */,
+				EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */,
 				EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */,
-				EC665F4929D65ED500C1ABBE /* LoginView.swift */,
-				ECEA8EC329D63DB8004BFEDD /* WebView.swift */,
-				EC174EA529E1FF0300A631BE /* CreateAccountView.swift */,
 				EC5256D12A56393F003EA12A /* AnalyticsView.swift */,
+				EC45CB342BEC67A800CD04A9 /* ViewUtils.swift */,
+				ECA8C7732C074685008D8EC6 /* UIViewController+AddChild.swift */,
+				ECA8C77B2C075F69008D8EC6 /* UITextField+UserDefaults.swift */,
 				ECEA8E9129C77A4B004BFEDD /* Assets.xcassets */,
 				ECEA8E9329C77A4B004BFEDD /* Preview Content */,
 			);
@@ -109,7 +171,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				ECEA8EC129C91FA8004BFEDD /* Bolt */,
+				EC44FE5A2BA63431006608A3 /* Bolt */,
 			);
 			productName = Example;
 			productReference = ECEA8E8A29C77A49004BFEDD /* Example.app */;
@@ -140,7 +202,6 @@
 			);
 			mainGroup = ECEA8E8129C77A49004BFEDD;
 			packageReferences = (
-				ECEA8EBF29C91F7C004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */,
 			);
 			productRefGroup = ECEA8E8B29C77A49004BFEDD /* Products */;
 			projectDirPath = "";
@@ -168,12 +229,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC174EA629E1FF0300A631BE /* CreateAccountView.swift in Sources */,
-				ECEA8EC429D63DB8004BFEDD /* WebView.swift in Sources */,
+				EC45CB2E2BEBA40900CD04A9 /* CheckoutSignInButtonView.swift in Sources */,
+				EC93C6F02BA1D76B002E1C92 /* SignedInStatusButtonView.swift in Sources */,
+				EC93C6E82BA1D152002E1C92 /* EmailInfoButtonView.swift in Sources */,
+				ECA8C77C2C075F69008D8EC6 /* UITextField+UserDefaults.swift in Sources */,
+				EC45CB352BEC67A800CD04A9 /* ViewUtils.swift in Sources */,
+				ECA8C77A2C075C3B008D8EC6 /* CheckoutSignInButtonViewController.swift in Sources */,
+				EC93C6E52BA1D018002E1C92 /* SwiftUIComponentsView.swift in Sources */,
 				ECEA8E9029C77A49004BFEDD /* HomeView.swift in Sources */,
+				EC93C6EE2BA1D624002E1C92 /* PreCheckoutSignInButtonView.swift in Sources */,
+				ECA8C7782C07580A008D8EC6 /* PreCheckoutSignInButtonViewController.swift in Sources */,
+				ECA8C7722C074554008D8EC6 /* SignedInStatusButtonViewController.swift in Sources */,
 				EC665F4C29D7065C00C1ABBE /* TokenizerView.swift in Sources */,
+				EC45CB302BEBAE4E00CD04A9 /* UIKitComponentsView.swift in Sources */,
 				EC5256D22A56393F003EA12A /* AnalyticsView.swift in Sources */,
-				EC665F4A29D65ED500C1ABBE /* LoginView.swift in Sources */,
+				EC45CB332BEBB00100CD04A9 /* EmailInfoButtonViewController.swift in Sources */,
+				EC93C6F22BA1D7F8002E1C92 /* AccountCreationCheckboxView.swift in Sources */,
+				ECA8C7742C074685008D8EC6 /* UIViewController+AddChild.swift in Sources */,
+				ECA8C7762C0747E7008D8EC6 /* AccountCreationCheckboxViewController.swift in Sources */,
 				ECEA8E8E29C77A49004BFEDD /* ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,21 +451,9 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		ECEA8EBF29C91F7C004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/BoltApp/bolt-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		ECEA8EC129C91FA8004BFEDD /* Bolt */ = {
+		EC44FE5A2BA63431006608A3 /* Bolt */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ECEA8EBF29C91F7C004BFEDD /* XCRemoteSwiftPackageReference "bolt-ios" */;
 			productName = Bolt;
 		};
 /* End XCSwiftPackageProductDependency section */
