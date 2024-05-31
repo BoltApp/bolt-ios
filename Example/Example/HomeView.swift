@@ -42,7 +42,7 @@ struct HomeView: View {
             .onChange(of: publishableKey) { newValue in
               Bolt.ClientProperties.shared.publishableKey = newValue
             }
-          .textFieldStyle(RoundedBorderTextFieldStyle())
+            .textFieldStyle(.roundedBorder)
         }
       }
       .listStyle(.plain)

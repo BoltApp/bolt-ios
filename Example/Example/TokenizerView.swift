@@ -25,11 +25,11 @@ struct TokenizerView: View {
       .padding([.bottom])
 
       TextField("Credit Card Number", text: $creditCardNumber)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .textFieldStyle(.roundedBorder)
         .keyboardType(.numberPad)
 
       TextField("CVV Number", text: $cvvNumber)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .textFieldStyle(.roundedBorder)
         .keyboardType(.numberPad)
         .padding([.bottom])
 
@@ -38,7 +38,7 @@ struct TokenizerView: View {
       }) {
         if isLoading {
           ProgressView()
-            .progressViewStyle(CircularProgressViewStyle())
+            .progressViewStyle(.circular)
             .foregroundColor(.white)
         } else {
           Text("Tokenize")

@@ -11,8 +11,8 @@ import SwiftUI
 struct UIKitComponentsView: View {
   var body: some View {
     List {
-      UIKitNavLink(viewController: PreCheckoutSignInButtonViewController(), title: "Pre-checkout sign in")
-      UIKitNavLink(viewController: CheckoutSignInButtonViewController(), title: "Checkout sign in")
+      UIKitNavLink(viewController: PreCheckoutSignInViewController(), title: "Pre-checkout sign in")
+      UIKitNavLink(viewController: CheckoutSignInViewController(), title: "Checkout sign in")
       UIKitNavLink(viewController: EmailInfoButtonViewController(), title: "Email info button")
       UIKitNavLink(viewController: SignedInStatusButtonViewController(), title: "Signed in status button")
       UIKitNavLink(viewController: AccountCreationCheckboxViewController(), title: "Account creation checkbox")

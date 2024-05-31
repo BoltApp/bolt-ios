@@ -14,7 +14,7 @@ struct EmailInfoButtonView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 8) {
       TextField("Email", text: $email)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .textFieldStyle(.roundedBorder)
       Bolt.UI.EmailInfoButton { url in
         UIApplication.shared.open(url)
       }
