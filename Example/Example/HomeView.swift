@@ -13,8 +13,10 @@ struct HomeView: View {
   @AppStorage("environment") var environment = Bolt.Environment.sandbox
 
   init() {
+    // Bolt SDK initialization
     Bolt.ClientProperties.shared.environment = environment
     Bolt.ClientProperties.shared.publishableKey = publishableKey
+    Bolt.UI.registerFonts()
   }
   
   var body: some View {
@@ -46,7 +48,7 @@ struct HomeView: View {
         }
       }
       .listStyle(.plain)
-      .navigationTitle("Bolt iOS Example")
+      .navigationTitle("Bolt SDK Example")
       .padding([.top])
     }
   }

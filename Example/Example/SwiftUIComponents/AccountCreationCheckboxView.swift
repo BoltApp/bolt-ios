@@ -11,11 +11,16 @@ import SwiftUI
 struct AccountCreationCheckboxView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 8) {
-      Bolt.UI.AccountCheckbox(merchantName: "Merchant", isChecked: true) { isChecked in
-        print("isChecked: \(isChecked)")
-      } onLinkTap: { url in
-        UIApplication.shared.open(url)
-      }
+      Bolt.UI.AccountCheckbox(
+        merchantName: "Merchant",
+        isChecked: true,
+        onCheckboxTap: { isChecked in
+          print("isChecked: \(isChecked)")
+        },
+        onLinkTap: { url in
+          UIApplication.shared.open(url)
+        }
+      )
       Spacer()
     }
     .padding()

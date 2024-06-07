@@ -50,7 +50,7 @@
 		ECA8C7772C07580A008D8EC6 /* PreCheckoutSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreCheckoutSignInViewController.swift; sourceTree = "<group>"; };
 		ECA8C7792C075C3B008D8EC6 /* CheckoutSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSignInViewController.swift; sourceTree = "<group>"; };
 		ECA8C77B2C075F69008D8EC6 /* UITextField+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+UserDefaults.swift"; sourceTree = "<group>"; };
-		ECEA8E8A29C77A49004BFEDD /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECEA8E8A29C77A49004BFEDD /* Bolt SDK Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bolt SDK Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEA8E8D29C77A49004BFEDD /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		ECEA8E8F29C77A49004BFEDD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ECEA8E9129C77A4B004BFEDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		ECEA8E8B29C77A49004BFEDD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ECEA8E8A29C77A49004BFEDD /* Example.app */,
+				ECEA8E8A29C77A49004BFEDD /* Bolt SDK Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ECEA8E8929C77A49004BFEDD /* Example */ = {
+		ECEA8E8929C77A49004BFEDD /* Bolt SDK Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECEA8E9829C77A4B004BFEDD /* Build configuration list for PBXNativeTarget "Example" */;
+			buildConfigurationList = ECEA8E9829C77A4B004BFEDD /* Build configuration list for PBXNativeTarget "Bolt SDK Example" */;
 			buildPhases = (
 				ECEA8E8629C77A49004BFEDD /* Sources */,
 				ECEA8E8729C77A49004BFEDD /* Frameworks */,
@@ -169,12 +169,12 @@
 			);
 			dependencies = (
 			);
-			name = Example;
+			name = "Bolt SDK Example";
 			packageProductDependencies = (
 				EC44FE5A2BA63431006608A3 /* Bolt */,
 			);
 			productName = Example;
-			productReference = ECEA8E8A29C77A49004BFEDD /* Example.app */;
+			productReference = ECEA8E8A29C77A49004BFEDD /* Bolt SDK Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +207,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ECEA8E8929C77A49004BFEDD /* Example */,
+				ECEA8E8929C77A49004BFEDD /* Bolt SDK Example */,
 			);
 		};
 /* End PBXProject section */
@@ -390,7 +390,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bolt.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolt.SDKExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -420,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bolt.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolt.SDKExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -440,7 +440,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECEA8E9829C77A4B004BFEDD /* Build configuration list for PBXNativeTarget "Example" */ = {
+		ECEA8E9829C77A4B004BFEDD /* Build configuration list for PBXNativeTarget "Bolt SDK Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ECEA8E9929C77A4B004BFEDD /* Debug */,
