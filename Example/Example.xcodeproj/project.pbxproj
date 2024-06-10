@@ -12,6 +12,7 @@
 		EC45CB302BEBAE4E00CD04A9 /* UIKitComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */; };
 		EC45CB332BEBB00100CD04A9 /* EmailInfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB322BEBB00100CD04A9 /* EmailInfoButtonViewController.swift */; };
 		EC45CB352BEC67A800CD04A9 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB342BEC67A800CD04A9 /* ViewUtils.swift */; };
+		EC4E072F2C17B31B00A04608 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4E072E2C17B31B00A04608 /* EmailValidator.swift */; };
 		EC5256D22A56393F003EA12A /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5256D12A56393F003EA12A /* AnalyticsView.swift */; };
 		EC665F4C29D7065C00C1ABBE /* TokenizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */; };
 		EC93C6E52BA1D018002E1C92 /* SwiftUIComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93C6E42BA1D018002E1C92 /* SwiftUIComponentsView.swift */; };
@@ -37,6 +38,7 @@
 		EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitComponentsView.swift; sourceTree = "<group>"; };
 		EC45CB322BEBB00100CD04A9 /* EmailInfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInfoButtonViewController.swift; sourceTree = "<group>"; };
 		EC45CB342BEC67A800CD04A9 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		EC4E072E2C17B31B00A04608 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		EC5256D12A56393F003EA12A /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerView.swift; sourceTree = "<group>"; };
 		EC93C6E42BA1D018002E1C92 /* SwiftUIComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIComponentsView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				EC665F4B29D7065C00C1ABBE /* TokenizerView.swift */,
 				EC5256D12A56393F003EA12A /* AnalyticsView.swift */,
 				EC45CB342BEC67A800CD04A9 /* ViewUtils.swift */,
+				EC4E072E2C17B31B00A04608 /* EmailValidator.swift */,
 				ECA8C7732C074685008D8EC6 /* UIViewController+AddChild.swift */,
 				ECA8C77B2C075F69008D8EC6 /* UITextField+UserDefaults.swift */,
 				ECEA8E9129C77A4B004BFEDD /* Assets.xcassets */,
@@ -246,6 +249,7 @@
 				EC45CB332BEBB00100CD04A9 /* EmailInfoButtonViewController.swift in Sources */,
 				EC93C6F22BA1D7F8002E1C92 /* AccountCreationCheckboxView.swift in Sources */,
 				ECA8C7742C074685008D8EC6 /* UIViewController+AddChild.swift in Sources */,
+				EC4E072F2C17B31B00A04608 /* EmailValidator.swift in Sources */,
 				ECA8C7762C0747E7008D8EC6 /* AccountCreationCheckboxViewController.swift in Sources */,
 				ECEA8E8E29C77A49004BFEDD /* ExampleApp.swift in Sources */,
 			);

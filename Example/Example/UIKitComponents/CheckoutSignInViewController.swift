@@ -81,6 +81,8 @@ class CheckoutSignInViewController: UIViewController {
       stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
       stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
     ])
+
+    validateEmail()
   }
 }
 
@@ -113,6 +115,11 @@ private extension CheckoutSignInViewController {
   }
 
   @objc func emailTextFieldDidChange() {
+    validateEmail()
     signInButton.view.isHidden = true
+  }
+
+  func validateEmail() {
+    continueButton.isEnabled = EmailValidator.isValid(emailTextField.text ?? "")
   }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CheckoutSignInView: View {
   @AppStorage("checkoutEmail") private var email = ""
+  @State private var isEmailValid = false
   @State private var hasAccount = false
   @State private var isAuthorizing = false
   @State private var resultText = ""
@@ -22,6 +23,7 @@ struct CheckoutSignInView: View {
           .keyboardType(.emailAddress)
           .autocapitalization(.none)
           .onChange(of: email) { _ in
+            isEmailValid = EmailValidator.isValid(email)
             hasAccount = false
           }
         if hasAccount {
@@ -33,10 +35,14 @@ struct CheckoutSignInView: View {
           isAuthorizing = true
         }
         .buttonStyle(.borderedProminent)
+        .disabled(!isEmailValid)
         Text(resultText)
         Spacer()
       }
       .padding()
+    }
+    .onAppear {
+      isEmailValid = EmailValidator.isValid(email)
     }
     // Frame for boltAuthorize view modifier needs to be full screen size
     // so that the gray overlay can be displayed over the whole screen area
