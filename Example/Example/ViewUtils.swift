@@ -29,6 +29,9 @@ struct UIKitNavLink<T: UIViewController>: View {
       NavigationLink {
           ViewControllerWrapper(viewController)
               .navigationTitle(title)
+              // SwiftUI imposes a safe area for embedded UIKit views
+              // Disabling this for checkout sign-in flow to enable loading overlay to fill screen bottom
+              .ignoresSafeArea(edges: .bottom)
       } label: {
           Text(title)
       }
