@@ -1,8 +1,13 @@
 ## Change Log
 
+### [1.1.0] - 2024-08-21
+
+- Add UI components
+- Add authorization flow
+
 ### [1.0.3] - 2023-08-24
 
-- Added "Billing details entered" event to analytics API
+- Add "Billing details entered" event to analytics API
 
 ### [1.0.2] - 2023-08-04
 

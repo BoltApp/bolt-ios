@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3C27E62C7690940058BED6 /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = EC3C27E52C7690940058BED6 /* Bolt */; };
 		EC44FE5B2BA63431006608A3 /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = EC44FE5A2BA63431006608A3 /* Bolt */; };
 		EC45CB2E2BEBA40900CD04A9 /* CheckoutSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB2D2BEBA40900CD04A9 /* CheckoutSignInView.swift */; };
 		EC45CB302BEBAE4E00CD04A9 /* UIKitComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */; };
@@ -33,7 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC44FE592BA63413006608A3 /* BuildOutput */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BuildOutput; path = "../../bolt-ios-sdk/BuildOutput"; sourceTree = "<group>"; };
 		EC45CB2D2BEBA40900CD04A9 /* CheckoutSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSignInView.swift; sourceTree = "<group>"; };
 		EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitComponentsView.swift; sourceTree = "<group>"; };
 		EC45CB322BEBB00100CD04A9 /* EmailInfoButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInfoButtonViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC44FE5B2BA63431006608A3 /* Bolt in Frameworks */,
+				EC3C27E62C7690940058BED6 /* Bolt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +99,6 @@
 		EC93C6E92BA1D23D002E1C92 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				EC44FE592BA63413006608A3 /* BuildOutput */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -175,6 +175,7 @@
 			name = "Bolt SDK Example";
 			packageProductDependencies = (
 				EC44FE5A2BA63431006608A3 /* Bolt */,
+				EC3C27E52C7690940058BED6 /* Bolt */,
 			);
 			productName = Example;
 			productReference = ECEA8E8A29C77A49004BFEDD /* Bolt SDK Example.app */;
@@ -456,6 +457,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EC3C27E52C7690940058BED6 /* Bolt */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Bolt;
+		};
 		EC44FE5A2BA63431006608A3 /* Bolt */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Bolt;
