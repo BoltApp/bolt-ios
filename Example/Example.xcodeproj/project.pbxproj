@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC3C27E62C7690940058BED6 /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = EC3C27E52C7690940058BED6 /* Bolt */; };
-		EC44FE5B2BA63431006608A3 /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = EC44FE5A2BA63431006608A3 /* Bolt */; };
+		EC3C27E92C76AF910058BED6 /* Bolt in Frameworks */ = {isa = PBXBuildFile; productRef = EC3C27E82C76AF910058BED6 /* Bolt */; };
 		EC45CB2E2BEBA40900CD04A9 /* CheckoutSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB2D2BEBA40900CD04A9 /* CheckoutSignInView.swift */; };
 		EC45CB302BEBAE4E00CD04A9 /* UIKitComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB2F2BEBAE4E00CD04A9 /* UIKitComponentsView.swift */; };
 		EC45CB332BEBB00100CD04A9 /* EmailInfoButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC45CB322BEBB00100CD04A9 /* EmailInfoButtonViewController.swift */; };
@@ -64,8 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC44FE5B2BA63431006608A3 /* Bolt in Frameworks */,
-				EC3C27E62C7690940058BED6 /* Bolt in Frameworks */,
+				EC3C27E92C76AF910058BED6 /* Bolt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +172,7 @@
 			);
 			name = "Bolt SDK Example";
 			packageProductDependencies = (
-				EC44FE5A2BA63431006608A3 /* Bolt */,
-				EC3C27E52C7690940058BED6 /* Bolt */,
+				EC3C27E82C76AF910058BED6 /* Bolt */,
 			);
 			productName = Example;
 			productReference = ECEA8E8A29C77A49004BFEDD /* Bolt SDK Example.app */;
@@ -206,6 +203,7 @@
 			);
 			mainGroup = ECEA8E8129C77A49004BFEDD;
 			packageReferences = (
+				EC3C27E72C76AF910058BED6 /* XCRemoteSwiftPackageReference "bolt-ios" */,
 			);
 			productRefGroup = ECEA8E8B29C77A49004BFEDD /* Products */;
 			projectDirPath = "";
@@ -456,13 +454,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCSwiftPackageProductDependency section */
-		EC3C27E52C7690940058BED6 /* Bolt */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Bolt;
+/* Begin XCRemoteSwiftPackageReference section */
+		EC3C27E72C76AF910058BED6 /* XCRemoteSwiftPackageReference "bolt-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BoltApp/bolt-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.0;
+			};
 		};
-		EC44FE5A2BA63431006608A3 /* Bolt */ = {
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC3C27E82C76AF910058BED6 /* Bolt */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = EC3C27E72C76AF910058BED6 /* XCRemoteSwiftPackageReference "bolt-ios" */;
 			productName = Bolt;
 		};
 /* End XCSwiftPackageProductDependency section */

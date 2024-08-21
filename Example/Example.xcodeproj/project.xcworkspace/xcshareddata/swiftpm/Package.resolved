@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "bolt-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BoltApp/bolt-ios",
+      "state" : {
+        "revision" : "6c78d395a0a276dd0d3d7b895ef149d32bfc69fc",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
